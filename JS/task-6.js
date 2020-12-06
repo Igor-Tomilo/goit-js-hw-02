@@ -8,3 +8,24 @@
 let input;
 const numbers = [];
 let total = 0;
+
+do {
+  input = prompt('Запиши число');
+  if (isNaN(input)) {
+    alert('Число не виявлено, запиши число');
+    continue;
+  } else if (input === '') {
+    continue;
+  } else if (input === null) {
+    for (let i = 0; i < numbers.length; i += 1) {
+      total += Number(numbers[i]);
+    }
+  } else {
+    numbers.push(input);
+  }
+} while (input !== null);
+if (
+  total !== 0
+    ? console.log(`Загальна сума введених чисел ${total}`)
+    : console.log('Дані відсутні')
+);
